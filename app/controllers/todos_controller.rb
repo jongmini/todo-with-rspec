@@ -2,13 +2,15 @@ class TodosController < ApplicationController
 
 	def index
 		@todos = Todo.all
-
 	end
 
 	def show
 		id=params[:id]
 		@todo = Todo.find(id)
 		redirect_to todos_path
+	
+	def new
+		@todo = Todo.new
 	end
 
 	def create
@@ -16,10 +18,5 @@ class TodosController < ApplicationController
 		@todo = Todo.create title_param
 		redirect_to "/todos/new"
 	end
-
-	def new
-		@todo = Todo.new
-	end
-
 
 end

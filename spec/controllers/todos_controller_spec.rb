@@ -13,10 +13,12 @@ describe TodosController do
 			expect(assigns(:todo)).to eq(@todo)
 		end
 		it "should render :new templete" do
+
 			get :new
 			expect(response).to render_template("new")
 		end
 	end
+
 
 	describe "POST create" do
 		before(:each) do
