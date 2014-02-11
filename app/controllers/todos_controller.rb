@@ -8,6 +8,7 @@ class TodosController < ApplicationController
 		id=params[:id]
 		@todo = Todo.find(id)
 		redirect_to todos_path
+	end
 	
 	def new
 		@todo = Todo.new
